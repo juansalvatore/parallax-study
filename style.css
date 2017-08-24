@@ -1,0 +1,126 @@
+body {
+  margin: 0;
+}
+
+.scroll {
+  height: 2000px;
+}
+
+article {
+  overflow: hidden;
+  height: 300px;
+  margin-top: 40px;
+}
+
+h1{
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: 20px;
+}
+
+p {
+  position: absolute;
+  max-width: 400px;
+  left: 50%;
+  margin-left: -200px;
+  font-family: tahoma;
+  line-height: 26px;
+}
+
+/*parallax*/
+.bird-box {
+  position: relative;
+  height: 600px;
+  width: auto;
+  background: url(Parallax-on-the-Web-DevTips--master/images/bird-bg.jpg);
+  background-position: top center;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.logo {
+  height: 100px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-image: url(Parallax-on-the-Web-DevTips--master/images/black-bird-logo.svg);
+  background-position: center;
+
+  position: absolute;
+  top: 50%;
+  margin-top: -50px;
+  animation-name: appear;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+}
+
+@keyframes appear {
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+
+.fore-bird {
+  width: 960px;
+  height: 733px;
+  background-image: url(Parallax-on-the-Web-DevTips--master/images/fore-bird.png);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+
+  position: absolute;
+  left: 58%;
+  margin-left: -460px;
+  top: 380px;
+}
+
+.back-bird {
+  width: 960px;
+  height: 298px;
+  background-image: url(Parallax-on-the-Web-DevTips--master/images/back-bird.png);
+  background-repeat: no-repeat;
+  background-position: top left;
+
+  position: absolute;
+  left: 50%;
+  margin-left: -460px;
+}
+
+
+@media(max-width: 1024px){
+  .logo {
+    background-size: 50%;
+  }
+}
+
+@media(max-width: 758px){
+  .fore-bird {
+    background-size: 40%;
+    left: 30%;
+    top: 50%;
+  }
+
+  .back-bird {
+    left: 70%;
+  }
+}
+
+@media(max-width: 425px){
+
+  .fore-bird{
+    left: -31%;
+  }
+
+  .logo {
+    filter: brightness(0) invert(1);
+    z-index: 2;
+  }
+
+  .back-bird {
+    left: 200%;
+    background-size: 17%;
+  }
+
+  p {
+    padding: 10px;
+    line-height: 23px;
+  }
+
+}
